@@ -42,4 +42,15 @@ public class TicketManagerTest {
         Ticket[] actual = manager.searchByAirport("LED", "GOJ");
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void searchNotTicketTo() {
+        manager.add(ticket1);
+        manager.add(ticket2);
+        manager.add(ticket3);
+        manager.add(ticket4);
+
+        Ticket[] expected = {};
+        Ticket[] actual = manager.searchByAirport("rrr", "ttt");
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
